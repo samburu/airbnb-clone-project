@@ -248,6 +248,29 @@ These security measures ensure that the backend API remains safe, reliable, and 
 
 
 ---
+## CI/CD Pipeline
+
+### What is CI/CD?
+
+CI/CD stands for **Continuous Integration** and **Continuous Deployment/Delivery**. It is a development practice where code changes are automatically tested, integrated, and deployed to staging or production environments. The goal is to improve software quality, reduce manual errors, and deliver new features faster and more reliably.
+
+### Why is CI/CD Important?
+
+- **Automated Testing**: Ensures new code does not break existing functionality.
+- **Faster Delivery**: Automates repetitive tasks like testing, building, and deploying, speeding up the development cycle.
+- **Improved Collaboration**: Encourages frequent code integration, making it easier to identify and fix issues early.
+- **Consistent Deployment**: Reduces human error by standardizing the deployment process.
+
+### Tools Used in This Project
+
+- **GitHub Actions**: Automates workflows such as running tests, linting code, and deploying updates when changes are pushed to the repository.
+- **Docker**: Containerizes the application to ensure consistency across development, testing, and production environments.
+- **Docker Compose** *(optional)*: Used for managing multi-container environments like web apps and databases during CI/CD stages.
+- **Heroku / AWS / Render / DigitalOcean** *(optional)*: Platforms where the backend can be automatically deployed.
+
+---
+
+With CI/CD in place, this project ensures stable and efficient development, reducing bugs in production and improving developer confidence.
 
 Feel free to fork or contribute!
 
