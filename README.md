@@ -68,15 +68,31 @@ The backend for the AirBnB Clone project is designed to provide a robust and sca
 
 ## ⚙️ Technology Stack
 
-| Component           | Technology         |
-|---------------------|--------------------|
-| Web Framework       | Django             |
-| API Layer           | Django REST Framework, GraphQL |
-| Database            | PostgreSQL         |
-| Asynchronous Tasks  | Celery             |
-| Caching             | Redis              |
-| Containerization    | Docker             |
-| Deployment & CI/CD  | GitHub Actions / Custom Pipelines |
+Below is an overview of the technologies used in this project and their specific purposes:
+
+### 🔹 Django
+- **Purpose**: A high-level Python web framework that enables rapid development of secure and maintainable web applications. It handles routing, views, models, and admin functionalities, forming the foundation of the backend.
+
+### 🔹 Django REST Framework (DRF)
+- **Purpose**: An extension of Django that simplifies the creation of RESTful APIs. It provides serializers, viewsets, and routing for handling HTTP requests and responses.
+
+### 🔹 PostgreSQL
+- **Purpose**: A powerful, open-source relational database system used to store and query structured data, including users, properties, bookings, and reviews.
+
+### 🔹 GraphQL
+- **Purpose**: A flexible query language that allows clients to request exactly the data they need, reducing over-fetching and improving frontend performance.
+
+### 🔹 Celery
+- **Purpose**: An asynchronous task queue used for background job processing such as sending notifications, booking confirmations, and payment handling.
+
+### 🔹 Redis
+- **Purpose**: An in-memory data store used for caching frequently accessed data and managing Celery task queues to improve performance.
+
+### 🔹 Docker
+- **Purpose**: A containerization platform that ensures consistency across development, testing, and production environments. It simplifies dependency management and deployment.
+
+### 🔹 CI/CD Pipelines (e.g., GitHub Actions)
+- **Purpose**: Automated workflows that test, build, and deploy code changes. Ensures quality and speeds up the release cycle.
 
 ---
 
