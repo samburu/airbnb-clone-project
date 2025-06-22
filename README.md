@@ -135,38 +135,101 @@ Below is an overview of the technologies used in this project and their specific
 
 ---
 
-## 📌 Endpoints Overview
+## 🗃️ Database Design
 
-### 🔐 Users
-- `GET /users/` – List users
-- `POST /users/` – Create user
-- `GET /users/{user_id}/` – Retrieve user
-- `PUT /users/{user_id}/` – Update user
-- `DELETE /users/{user_id}/` – Delete user
+The backend database schema is designed to support the core functionality of the AirBnB Clone. Below are the key entities and their relationships.
 
-### 🏠 Properties
-- `GET /properties/` – List properties
-- `POST /properties/` – Create property
-- `GET /properties/{property_id}/` – Retrieve property
-- `PUT /properties/{property_id}/` – Update property
-- `DELETE /properties/{property_id}/` – Delete property
+### 1. **User**
+Represents people using the platform, either as guests or hosts.
 
-### 📅 Bookings
-- `GET /bookings/` – List bookings
-- `POST /bookings/` – Create booking
-- `GET /bookings/{booking_id}/` – Retrieve booking
-- `PUT /bookings/{booking_id}/` – Update booking
-- `DELETE /bookings/{booking_id}/` – Delete booking
+**Key Fields:**
+- `id`: Primary key
+- `username`: Unique username
+- `email`: Email address (unique)
+- `password_hash`: Encrypted user password
+- `is_host`: Boolean indicating if the user can list properties
 
-### 💳 Payments
-- `POST /payments/` – Process payment
+**Relationships:**
+- One user can have multiple properties
+- One user can make multiple bookings
+- One user can write multiple reviews
 
-### 🌟 Reviews
-- `GET /reviews/` – List reviews
-- `POST /reviews/` – Create review
-- `GET /reviews/{review_id}/` – Retrieve review
-- `PUT /reviews/{review_id}/` – Update review
-- `DELETE /reviews/{review_id}/` – Delete review
+---
+
+### 2. **Property**
+Represents a listing posted by a host.
+
+**Key Fields:**
+- `id`: Primary key
+- `user_id`: Foreign key to User (host)
+- `title`: Name of the property
+- `description`: Description of the property
+- `price_per_night`: Cost to book per night
+
+**Relationships:**
+- Each property is owned by one user
+- A property can have multiple bookings
+- A property can have multiple reviews
+
+---
+
+### 3. **Booking**
+Represents a reservation made by a user.
+
+**Key Fields:**
+- `id`: Primary key
+- `user_id`: Foreign key to User (guest)
+- `property_id`: Foreign key to Property
+- `check_in`: Start date of booking
+- `check_out`: End date of booking
+
+**Relationships:**
+- Each booking belongs to one user
+- Each booking is for one property
+- A booking may be associated with one payment
+
+---
+
+### 4. **Payment**
+Represents a payment transaction for a booking.
+
+**Key Fields:**
+- `id`: Primary key
+- `booking_id`: Foreign key to Booking
+- `amount`: Total payment amount
+- `status`: Status of the payment (e.g., pending, completed)
+- `timestamp`: Date and time of the payment
+
+**Relationships:**
+- Each payment is linked to one booking
+
+---
+
+### 5. **Review**
+Represents user feedback on a property.
+
+**Key Fields:**
+- `id`: Primary key
+- `user_id`: Foreign key to User (guest)
+- `property_id`: Foreign key to Property
+- `rating`: Numerical rating (e.g., 1–5)
+- `comment`: Text review
+
+**Relationships:**
+- Each review is written by one user
+- Each review is associated with one property
+
+---
+
+### 🔁 Entity Relationships Summary
+
+- A **User** can list many **Properties**
+- A **User** can make many **Bookings**
+- A **User** can write many **Reviews**
+- A **Property** can have many **Bookings** and **Reviews**
+- A **Booking** belongs to one **User** and one **Property**
+- A **Payment** is tied to one **Booking**
+- A **Review** links a **User** to a **Property**
 
 ---
 
