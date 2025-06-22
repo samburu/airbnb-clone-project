@@ -17,54 +17,31 @@ The backend for the AirBnB Clone project is designed to provide a robust and sca
 
 ---
 
-## 🛠️ Features Overview
+## ✨ Feature Breakdown
 
-### 1. API Documentation
-- **OpenAPI**: Comprehensive docs for clarity and integration.
-- **Django REST Framework (DRF)**: RESTful CRUD API for users, properties, bookings, and payments.
-- **GraphQL**: Flexible querying capabilities for frontend consumers.
+The AirBnB Clone backend is designed to replicate core functionalities of the Airbnb platform. Below are the major features and what each one brings to the project:
 
-### 2. User Authentication
-- **Endpoints**:
-  - `GET /users/`
-  - `POST /users/`
-  - `GET /users/{user_id}/`
-  - `PUT /users/{user_id}/`
-  - `DELETE /users/{user_id}/`
+### 1. **User Management**
+Handles the registration, authentication, and profile management of users. This feature ensures that both guests and hosts can securely access and manage their accounts.
 
-### 3. Property Management
-- **Endpoints**:
-  - `GET /properties/`
-  - `POST /properties/`
-  - `GET /properties/{property_id}/`
-  - `PUT /properties/{property_id}/`
-  - `DELETE /properties/{property_id}/`
+### 2. **Property Management**
+Allows hosts to create, update, retrieve, and delete property listings. This feature enables hosts to manage accommodations that are available for booking.
 
-### 4. Booking System
-- **Endpoints**:
-  - `GET /bookings/`
-  - `POST /bookings/`
-  - `GET /bookings/{booking_id}/`
-  - `PUT /bookings/{booking_id}/`
-  - `DELETE /bookings/{booking_id}/`
+### 3. **Booking System**
+Enables users to reserve available properties for specified date ranges. It handles the creation and modification of bookings, ensuring accurate availability tracking and preventing double bookings.
 
-### 5. Payment Processing
-- **Endpoints**:
-  - `POST /payments/`
+### 4. **Payment Processing**
+Facilitates secure payment transactions related to bookings. It manages the recording of payments, tracks statuses (pending, completed), and integrates with third-party payment services if needed.
 
-### 6. Review System
-- **Endpoints**:
-  - `GET /reviews/`
-  - `POST /reviews/`
-  - `GET /reviews/{review_id}/`
-  - `PUT /reviews/{review_id}/`
-  - `DELETE /reviews/{review_id}/`
+### 5. **Review System**
+Allows users to leave ratings and feedback on properties they have booked. This builds trust within the platform and helps future guests make informed decisions.
 
-### 7. Database Optimizations
-- **Indexing**: For high-frequency queries.
-- **Caching**: Improves speed and reduces load.
+### 6. **API Access (REST & GraphQL)**
+Provides access to backend functionality through RESTful endpoints and GraphQL queries. This allows frontend applications to interact with the backend in a flexible and structured manner.
 
----
+### 7. **Performance Optimization**
+Implements indexing, caching, and asynchronous processing to ensure the application remains responsive and scalable under high load.
+
 
 ## ⚙️ Technology Stack
 
@@ -125,13 +102,6 @@ Below is an overview of the technologies used in this project and their specific
   - Perform regression, load, and integration testing.
   - Report and track bugs and ensure they are resolved before release.
   - Collaborate with developers to maintain a high-quality codebase.
-
----
-
-## 📈 API Documentation Overview
-
-- **REST API**: Fully documented with OpenAPI (Swagger UI).
-- **GraphQL API**: Interactive query capabilities for tailored data access.
 
 ---
 
