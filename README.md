@@ -1,12 +1,12 @@
-# 🏠 AirBnB Clone Project
+# AirBnB Clone Project
 
-## 🚀 Objective
+## Objective
 
 The backend for the AirBnB Clone project is designed to provide a robust and scalable foundation for managing user interactions, property listings, bookings, and payments. This backend supports the core features required to mimic the Airbnb platform, ensuring a smooth experience for both users and hosts.
 
 ---
 
-## 🏆 Project Goals
+## Project Goals
 
 - **User Management**: Secure registration, authentication, and profile handling.
 - **Property Management**: Endpoints to create, update, retrieve, and delete listings.
@@ -17,7 +17,7 @@ The backend for the AirBnB Clone project is designed to provide a robust and sca
 
 ---
 
-## ✨ Feature Breakdown
+## Feature Breakdown
 
 The AirBnB Clone backend is designed to replicate core functionalities of the Airbnb platform. Below are the major features and what each one brings to the project:
 
@@ -105,7 +105,7 @@ Below is an overview of the technologies used in this project and their specific
 
 ---
 
-## 🗃️ Database Design
+## Database Design
 
 The backend database schema is designed to support the core functionality of the AirBnB Clone. Below are the key entities and their relationships.
 
@@ -191,7 +191,7 @@ Represents user feedback on a property.
 
 ---
 
-### 🔁 Entity Relationships Summary
+### Entity Relationships Summary
 
 - A **User** can list many **Properties**
 - A **User** can make many **Bookings**
@@ -203,9 +203,49 @@ Represents user feedback on a property.
 
 ---
 
-## 📂 Repository Structure (Coming Soon)
+## API Security
 
-> Structure will be updated as modules are implemented.
+Securing the backend APIs of the AirBnB Clone is essential to protect sensitive data, ensure trust, and maintain system integrity. The following security measures will be implemented:
+
+### 1. **Authentication**
+We will implement secure user authentication using token-based systems such as JWT (JSON Web Tokens). This ensures that only registered users can access protected resources.
+
+>  *Why it's important:* Prevents unauthorized access to user profiles, property listings, and booking operations.
+
+### 2. **Authorization**
+Role-based access control (RBAC) will be enforced to differentiate permissions for guests, hosts, and admins. Only authorized users will be able to perform specific actions like creating listings or managing bookings.
+
+>  *Why it's important:* Ensures users can only perform actions relevant to their role, reducing misuse or data tampering.
+
+### 3. **Input Validation & Sanitization**
+All incoming requests will be validated and sanitized to prevent injection attacks, malformed data, and unexpected behavior.
+
+>  *Why it's important:* Prevents SQL injection, XSS, and other common attack vectors that can compromise system data.
+
+### 4. **Rate Limiting**
+Rate limiting will be applied to APIs to prevent abuse, brute-force login attempts, and DDoS attacks. Tools like Django Ratelimit or DRF extensions will be used.
+
+>  *Why it's important:* Protects the API from performance degradation and malicious exploitation.
+
+### 5. **Secure Payment Integration**
+Payments will be processed using trusted third-party services with PCI-compliant APIs. Sensitive payment data will never be stored directly on the server.
+
+>  *Why it's important:* Ensures the safety of financial transactions and user trust.
+
+### 6. **HTTPS & Secure Headers**
+The API will enforce HTTPS connections and include security headers (e.g., HSTS, CSP, X-Content-Type-Options) to prevent man-in-the-middle attacks and content sniffing.
+
+>  *Why it's important:* Safeguards all transmitted data, especially sensitive user credentials and session tokens.
+
+### 7. **Logging & Monitoring**
+Security events, login attempts, and API access patterns will be logged and monitored for anomalies.
+
+>  *Why it's important:* Enables early detection of breaches or suspicious activities and supports auditing and recovery.
+
+---
+
+These security measures ensure that the backend API remains safe, reliable, and trustworthy for all users and transactions.
+
 
 ---
 
